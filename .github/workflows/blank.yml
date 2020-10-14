@@ -27,6 +27,7 @@ jobs:
         docker build -t synobuild .
         docker run --rm --privileged --env PACKAGE_ARCH=x64 --env DSM_VER=6.2 -v $(pwd)/artifacts:/result_spk synobuild
         docker run --rm --privileged --env PACKAGE_ARCH=apollolake --env DSM_VER=6.2 -v $(pwd)/artifacts:/result_spk synobuild
+        docker run --rm --privileged --env PACKAGE_ARCH=geminilake --env DSM_VER=6.2 -v $(pwd)/artifacts:/result_spk synobuild
         
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@2.1.0
